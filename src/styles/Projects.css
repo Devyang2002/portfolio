@@ -1,0 +1,33 @@
+.project_main{
+    display: flex;
+    flex-direction: column;
+}
+
+.project_heading > h1{
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-size: 30px;
+}
+
+.project_heading > p{
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+    font-size: 45px;
+    background: linear-gradient(90deg, rgb(126, 6, 129) 30%, rgb(53, 119, 204) 65%, rgba(0,212,255,1) 100%); 
+    -webkit-text-stroke: 1px rgb(17, 7, 66);
+    background-clip: text;
+    color: transparent; 
+}
+
+.project_cards{
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden; 
+    width: 100%;
+}
+
+.project_cards::-webkit-scrollbar{
+    width: 0;
+}
