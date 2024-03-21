@@ -2,30 +2,36 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import CardServices from './components/CardServices';
 import Services from './components/Services';
-import CardProjects from './components/CardProjects';
 import Projects from './components/Projects';
+import Skills from './components/Skills';
+import Testimonials from './components/Testimonials';
+import { BrowserRouter} from 'react-router-dom';
 
-function App() {
+function App() {  
   return (
+    <BrowserRouter>
     <div className="Container">
         <div className="body">
-          <section className='hero'> 
+          <section className='hero'id='home'> 
           <Navbar/>
-          <Hero/>
+          <Hero />
           </section>
-          <section className='services'>
-            <Services/>
+          <section className='services' id='service'>
+            <Services />
           </section>
-          <section className='projects'>
-            <Projects/>
+          <section className='projects' id='project'>
+            <Projects />
           </section>
-          <section className='skills'>Skills</section>
-          <section className='testimonials'>Testimonials</section>
-          <section className='social'>Social</section>
+          <section className='skills' id='skill'>
+            <Skills  />
+          </section>
+          <section className='testimonials'id='testimonial' >
+              <Testimonials />
+          </section>
         </div>
     </div>
+    </BrowserRouter>
   );
 }
 

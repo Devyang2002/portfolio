@@ -1,0 +1,46 @@
+.skills_head{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.skills_head > h1{
+    color: white;
+}
+
+.skills_basics{
+    display: flex;
+}
+
+.skills_basics > img{
+    width: 60px;
+    /* padding: 10px; */
+}
+
+.skillbasic{
+    display: flex;
+    flex-direction: column;
+}
+.skillbasic > h1{
+    /* margin-left: 5px;
+    margin-top: 5px; */
+    font-size: 21px;
+    opacity: 1;
+    /* padding: 10px; */
+    /* color: white; */
+    background: linear-gradient(90deg, rgb(126, 6, 129) 0%, rgb(53, 119, 204) 45%, rgba(0,212,255,1) 100%); 
+    -webkit-text-stroke: 1px rgb(17, 7, 66);
+    background-clip: text;
+    color: transparent; 
+}
+.skillbasic > p{
+    /* margin-top: 20px; */
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.skills_percentages > hr{
+    margin-left:20px;
+    border-radius: 5px;
+    border: 1px solid black;
+}

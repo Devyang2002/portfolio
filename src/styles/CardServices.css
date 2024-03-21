@@ -28,7 +28,7 @@
 }
 
 .card:hover{
-    height: 430px;
+    height: 470px;
 }
 
 .card_img{
@@ -68,7 +68,7 @@
 .content > button{
     width: 120px;
     height: 40px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
 .card_button{

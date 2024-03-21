@@ -14,6 +14,7 @@
 
 .list{
     /* border: 1px solid red; */
+    margin-top: 5px ;
 }
 .list > ul {
     display: flex;
@@ -29,8 +30,28 @@
     font-weight: 600;
     color: white;
     cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
 
-.list > ul > li:hover{
-    text-decoration: underline;
+.list > ul >li > a{
+    list-style: none;
+    display: inline-block;
+    margin-right: 35px;
+    font-size: 17px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.list > ul > li > a:hover{
+    /* transition-delay: 0.2s; */
+    font-size: 20px;
+    font-weight: 700;
+    /* background: linear-gradient(90deg, rgb(126, 6, 129) 0%, rgb(53, 119, 204) 45%, rgba(0,212,255,1) 100%); 
+    -webkit-text-stroke: 1px rgb(17, 7, 66);
+    background-clip: text;
+    color: transparent;  */
+    /* color: purple; */
 }

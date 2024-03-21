@@ -6,7 +6,7 @@ export default function CardServices(props) {
     <div className='card_main'>
         <div className="card">
             <div className="card_img">
-                <img src={props.Img} alt="" />
+                <img src={props.Img} alt=""/>
             </div>
             <div className="content">
                 <h2>{props.Heading}</h2>
