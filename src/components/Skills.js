@@ -12,7 +12,7 @@ import { EffectCoverflow, Pagination } from 'swiper/modules';
 import '../styles/Skills.css'
 import Cpp from '../assets/democpp.webp'
 
-export default function Skills({id}) {
+export default function Skills({id, data}) {
       const swiper_style={
                width: '100%',
              paddingTop: '50px',
@@ -55,114 +55,32 @@ export default function Skills({id}) {
         className="mySwiper"
         style={swiper_style}
       >
-
-      
-        <SwiperSlide style={swiperslide_style}>
-          <div className="skills_main">
-        <div className="skills_basics">
-            <img src={Cpp} alt="" />
-            <div className="skillbasic">
-            <h1>C++ 
-            </h1>
-            <p>
-                (with 10%  proficiency)
-            </p>
-            </div>
-        </div>
-        <div className="skills_percentages">
-        <hr style={{ 
-            width: '350px', 
-            height: '10px', 
-            background: `linear-gradient(to right, purple 10%, white 0%)`,
-            border: '1px solid black'
-            }} />
-        </div>    
-        </div>   
-        </SwiperSlide>
-        <SwiperSlide style={swiperslide_style}>
-        <div className="skills_main">
-        <div className="skills_basics">
-        <img src={Cpp} alt="" />
-        <div className="skillbasic">
-            <h1>mongo db 
-            </h1>
-            <p>
-                (with 40%  proficiency)
-            </p>
-            </div>
-        </div>
-        <div className="skills_percentages">
-        <hr style={{ 
-            width: '350px', 
-            height: '10px', 
-            background: `linear-gradient(to right, purple 40%, white 0%)` }} />
-        </div>    
-        </div>  
-        </SwiperSlide>
-        <SwiperSlide style={swiperslide_style}>
-        <div className="skills_main">
-        <div className="skills_basics">
-            <img src={Cpp} alt="" />
-            <div className="skillbasic">
-            <h1>Javascript 
-            </h1>
-            <p>
-                (with 80%  proficiency)
-            </p>
-            </div>
-        </div>
-        <div className="skills_percentages">
-        <hr style={{ 
-            width: '350px', 
-            height: '10px', 
-            background: `linear-gradient(to right, purple 80%, white 0%)` }} />
-        </div>    
-        </div>  
-        </SwiperSlide>
-        <SwiperSlide style={swiperslide_style}>
-        <div className="skills_main">
-        <div className="skills_basics">
-            <img src={Cpp} alt="" />
-            <div className="skillbasic">
-            <h1>React Js
-            </h1>
-            <p>
-                (with 60%  proficiency)
-            </p>
-            </div>
-        </div>
-        <div className="skills_percentages">
-        <hr style={{ 
-            width: '350px', 
-            height: '10px', 
-            background: `linear-gradient(to right, purple 60%, white 0%)`
-            
-            }} />
-        </div>    
-        </div>  
-        </SwiperSlide>
-        <SwiperSlide style={swiperslide_style}>
-        <div className="skills_main">
-        <div className="skills_basics">
-            <img src={Cpp} alt="" />
-            <div className="skillbasic">
-            <h1>Html
-            </h1>
-            <p>
-                (with 90%  proficiency)
-            </p>
-            </div>
-        </div>
-        <div className="skills_percentages">
-        <hr style={{ 
-            width: '350px', 
-            height: '10px', 
-            background: `linear-gradient(to right, purple 90%, white 0%)` ,
-            boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
-            }} />
-        </div>    
-        </div>  
-        </SwiperSlide>
+        {
+            data.map((item)=>{
+                return <SwiperSlide style={swiperslide_style}>
+                <div className="skills_main">
+              <div className="skills_basics">
+                  <img src={item.image.url} alt="" />
+                  <div className="skillbasic">
+                  <h1>{item.name}
+                  </h1>
+                  <p>
+                      (with {item.percentage}%  proficiency)
+                  </p>
+                  </div>
+              </div>
+              <div className="skills_percentages">
+              <hr style={{ 
+                  width: '350px', 
+                  height: '10px', 
+                  background: `linear-gradient(to right, purple ${item.percentage}%, white 0%)`,
+                  border: '1px solid black'
+                  }} />
+              </div>    
+              </div>   
+              </SwiperSlide>
+            })
+        }
        </Swiper>
        </div> 
     </>

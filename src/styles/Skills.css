@@ -6,6 +6,7 @@
 
 .skills_head > h1{
     color: white;
+    margin: 16px;
 }
 
 .skills_basics{
@@ -43,4 +44,10 @@
     margin-left:20px;
     border-radius: 5px;
     border: 1px solid black;
+}
+
+@media(max-width:1000px){
+    .skills_head{
+        margin-bottom: 200px;
+    }
 }

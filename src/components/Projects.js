@@ -3,7 +3,7 @@ import demo2 from '../assets/demo2.webp'
 import CardProjects from './CardProjects'
 import '../styles/Projects.css'
 
-export default function Projects({id}) {
+export default function Projects({id, data}) {
   return (
     <div className='project_main' id={id}>
         <div className="project_heading">
@@ -11,15 +11,15 @@ export default function Projects({id}) {
             <p>Browse through my portfolio showcasing various projects, each designed to solve different problems and demonstrate my skills and creativity.</p>
         </div>
         <div className="project_cards">
-            <CardProjects project_img={demo2} project_heading="Something" project_para="jbfjbff fjfbfbj bffj bfj  jfjfjefjffef ef ef jew fbjefbje fjebjf jefejfb jebfj e fje fejfbjebfj fb fiefb jefb  jefbjefje fjf jefje jf bejf ejfbejfbejfboibfebwfifbuf  ewjk" />
-            <CardProjects project_img={demo2} project_heading="Something" project_para="jbfjbff fjfbfbj bffj bfj  jfjfjefjffef ef ef jew fbjefbje fjebjf jefejfb jebfj e fje fejfbjebfj fb fiefb jefb  jefbjefje fjf jefje jf bejf ejfbejfbejfboibfebwfifbuf  ewjk" />
-            <CardProjects project_img={demo2} project_heading="Something" project_para="jbfjbff fjfbfbj bffj bfj  jfjfjefjffef ef ef jew fbjefbje fjebjf jefejfb jebfj e fje fejfbjebfj fb fiefb jefb  jefbjefje fjf jefje jf bejf ejfbejfbejfboibfebwfifbuf  ewjk" />
-            <CardProjects project_img={demo2} project_heading="Something" project_para="jbfjbff fjfbfbj bffj bfj  jfjfjefjffef ef ef jew fbjefbje fjebjf jefejfb jebfj e fje fejfbjebfj fb fiefb jefb  jefbjefje fjf jefje jf bejf ejfbejfbejfboibfebwfifbuf  ewjk" />
-            <CardProjects project_img={demo2} project_heading="Something" project_para="jbfjbff fjfbfbj bffj bfj  jfjfjefjffef ef ef jew fbjefbje fjebjf jefejfb jebfj e fje fejfbjebfj fb fiefb jefb  jefbjefje fjf jefje jf bejf ejfbejfbejfboibfebwfifbuf  ewjk" />
+          {data.map((item)=>{
+            return <CardProjects project_img={item.image.url} project_heading={item.title} project_para={item.techStack} />
+          })
+          }
+        
         </div>
-        {/* <div className="Arrow_right">
+        <div className="Arrow_right">
             Scroll ➡ side to see all the Projects
-        </div> */}
+        </div>
     </div>
   )
 }

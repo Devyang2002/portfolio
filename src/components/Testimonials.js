@@ -16,7 +16,7 @@ import linkedin from '../assets/linkedindemo.webp'
 // import required modules
 import { EffectCards } from 'swiper/modules';
 
-export default function Testimonials({id}) {
+export default function Testimonials({id, data}) {
   return (
     <>
     <div id={id}>
@@ -29,22 +29,16 @@ export default function Testimonials({id}) {
         modules={[EffectCards]}
         className="mySwiper"
       >
-        <SwiperSlide> 
+        {data.map((item)=>{
+          return <SwiperSlide> 
             <div className="test_basics">
-                <img src={Img2} alt="" />
-                <h5>Samantha Wu</h5>
-                <div className='position'>Software Engineer</div>
-                <p>I had the pleasure of working closely with John on a challenging project. He is a highly skilled developer who consistently delivered excellent results. His ability to understand complex requirements and implement efficient solutions was truly impressive. I would highly recommend him to any organization looking for a talented developer.</p>
+                <img src={item.image.url} alt="" />
+                <h5>{item.name}</h5>
+                <div className='position'>{item.position}</div>
+                <p>{item.review}</p>
             </div>
-        </SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+            </SwiperSlide>
+        })}
       </Swiper>
       <div className='footer'>
         <hr />
