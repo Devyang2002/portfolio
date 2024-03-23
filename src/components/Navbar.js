@@ -1,21 +1,18 @@
-import React from 'react'
+import React,{useState} from 'react'
 import '../styles/Navbar.css'
 // import { smoothScrollTo } from './smoothScroller'
 import {HashLink as Link} from 'react-router-hash-link'
 
 export default function Navbar() {
-  const toggleBtn = document.querySelector('.toggle_btn');
-  const toggleBtnIcon = document.querySelector('.toggle_btn i');
-  const dropDownMenu = document.querySelector('.dropdown_menu');
+const [isOpen, setIsOpen] = useState(false);
 
- const handletoggle= ()=>{
-    dropDownMenu.classList.toggle('open');
-    const isOpen = dropDownMenu.classList.contains('open');
+const handletoggle = () => {
+  setIsOpen(!isOpen);
+};
 
-    toggleBtnIcon.classList = isOpen
-    ? 'fa-solid fa-xmark'
-    : 'fa-solid fa-bars'
-  } 
+const handleNavbarClick = () => {
+  setIsOpen(false); 
+};
   
   return (
     <div className='navs'>
@@ -30,17 +27,19 @@ export default function Navbar() {
             <li><Link to='#skill' smooth>Skills</Link></li>
             <li><Link to='#testimonial' smooth>Testimonials</Link></li>
         </ul>
-        <div className='toggle_btn'>
-        <i class="fa-solid fa-bars" onClick={handletoggle}></i>
+        <div className='toggle_btn' onClick={handletoggle}>
+        <i className={isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars"} ></i>
         </div>
       </div>
+      {isOpen && (
       <div className="dropdown_menu">
-      <li><Link to='#home' smooth>Home</Link></li>
-            <li><Link to='#service' smooth>Services</Link></li>
-            <li><Link to='#project' smooth>Projects</Link></li>
-            <li><Link to='#skill' smooth>Skills</Link></li>
-            <li><Link to='#testimonial' smooth>Testimonials</Link></li> 
+      <li><Link to='#home' smooth onClick={handleNavbarClick}>Home</Link></li>
+            <li><Link to='#service' smooth onClick={handleNavbarClick}>Services</Link></li>
+            <li><Link to='#project' smooth onClick={handleNavbarClick}>Projects</Link></li>
+            <li><Link to='#skill' smooth onClick={handleNavbarClick}>Skills</Link></li>
+            <li><Link to='#testimonial' smooth onClick={handleNavbarClick}>Testimonials</Link></li> 
       </div>
+      )}
     </div>
   )
 }
