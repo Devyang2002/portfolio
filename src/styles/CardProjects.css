@@ -27,7 +27,6 @@
     position: absolute;
     width: 450px;
     height: 320px;
-    /* object-fit: center; */
 }
 
 .front > h3{
@@ -45,7 +44,6 @@
     top: -320px;
     transform: perspective(600px) rotateY(180deg);
     background: linear-gradient(179deg, #052f51, #680d69);
-    /* background: linear-gradient(179deg, #176eb5, #d545d7); */
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 12.5px );
     -webkit-backdrop-filter: blur( 12.5px );

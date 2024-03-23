@@ -6,8 +6,6 @@
 }
 
 .web_name{
-    /* width: 20vw; */
-    /* margin-left: 15px; */
     margin: 20px;
     text-decoration: underline;
     
@@ -16,7 +14,6 @@
 }
 
 .list{
-    /* border: 1px solid red; */
     margin-top: 5px ;
 }
 .list > ul {
@@ -49,14 +46,8 @@
 }
 
 .list > ul > li > a:hover{
-    /* transition-delay: 0.2s; */
     font-size: 20px;
     font-weight: 700;
-    /* background: linear-gradient(90deg, rgb(126, 6, 129) 0%, rgb(53, 119, 204) 45%, rgba(0,212,255,1) 100%); 
-    -webkit-text-stroke: 1px rgb(17, 7, 66);
-    background-clip: text;
-    color: transparent;  */
-    /* color: purple; */
 }
 
 .toggle_btn{
